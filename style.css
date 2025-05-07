@@ -6,8 +6,9 @@
     --blue: hsl(212, 86%, 64%);
 
     /* Neutral Colors */
-    --grey-500: hsl(234, 12%, 34%);
-    --grey-400: hsl(212, 6%, 44%);
+    --grey1: hsl(234, 12%, 34%);
+    --grey2: hsl(212, 6%, 44%);
+    --grey2-opac: hsla(235, 58%, 69%, 0.3);
     --white: hsl(0, 0%, 100%);
 }
 
@@ -19,6 +20,10 @@
 
 * {
     margin: 0;
+}
+
+html {
+    font-size: 15px;
 }
 
 body {
@@ -42,19 +47,7 @@ textarea,
 select {
     font: inherit;
 }
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    overflow-wrap: break-word;
-}
 
-p {
-    text-wrap: pretty;
-}
 h1,
 h2,
 h3,
@@ -67,4 +60,120 @@ h6 {
 #root,
 #__next {
     isolation: isolate;
+}
+
+/* === Fonts === */
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+h2,
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* === Header === */
+header {
+    text-align: center;
+    max-width: 650px;
+    margin: 110px auto 80px;
+    color: var(--grey1);
+}
+
+header h1 {
+    font-size: 2.9rem;
+}
+header h2 {
+    font-size: 2.9rem;
+}
+header p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.8;
+    margin-top: 15px;
+}
+
+/* === Main  === */
+main {
+    margin: 0 auto;
+    width: 75%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    gap: 2rem;
+}
+
+section {
+    position: relative;
+    padding: 40px;
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 310px;
+    min-width: 380px;
+    max-width: 415px;
+    color: var(--grey1);
+    box-shadow: 0px 5px 20px var(--grey2-opac);
+}
+
+section img {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    width: 80px;
+    height: auto;
+}
+
+section h3 {
+    font-size: 1.6rem;
+}
+
+section p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+#supervisor {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 3;
+    border-top: 6px solid var(--cyan);
+}
+
+#teamBuilder {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    border-top: 6px solid var(--red);
+}
+
+#karma {
+    grid-column: 2;
+    grid-row: 3 / span 4;
+    border-top: 6px solid var(--orange);
+}
+
+#calculator {
+    grid-column: 3;
+    grid-row: 2 / span 3;
+    border-top: 6px solid var(--blue);
+}
+
+/* === Footer === */
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    margin: 0 auto;
 }
