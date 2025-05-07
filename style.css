@@ -28,8 +28,19 @@ html {
 
 body {
     line-height: 1.5;
-
     -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 img,
@@ -107,10 +118,10 @@ header p {
 /* === Main  === */
 main {
     margin: 0 auto;
-    width: 75%;
-    height: 100%;
+    max-width: 1300px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
     grid-template-rows: repeat(4, auto);
     gap: 2rem;
 }
@@ -121,7 +132,7 @@ section {
     background-color: var(--white);
     border-radius: 8px;
     overflow: hidden;
-    height: 310px;
+    height: 300px;
     min-width: 380px;
     max-width: 415px;
     color: var(--grey1);
@@ -172,8 +183,54 @@ section p {
 /* === Footer === */
 
 footer {
-    position: absolute;
     width: 100%;
     bottom: 0;
-    margin: 0 auto;
+    margin: auto auto 0 auto;
+}
+
+@media screen and (max-width: 1400px) {
+    html {
+        min-width: 375px;
+    }
+    header {
+        margin: 50px auto 50px;
+        width: 85%;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header h2 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    section {
+        min-width: 280px;
+        max-width: 350px;
+        height: 250px;
+        padding: 30px 40px;
+    }
+
+    section h3 {
+        font-size: 1.4rem;
+    }
+
+    section p {
+        font-size: 0.8rem;
+    }
+
+    footer {
+    }
 }
